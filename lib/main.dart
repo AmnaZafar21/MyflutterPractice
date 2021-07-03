@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'home_page.dart';
+import 'pages/home_page.dart';
+import 'pages/login_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,17 +12,31 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   
+    // bringVegetables();
     //double pie = 3.14;
-   // bool intial = true;
-   // num temprature =
-      //  20.5; //accepts other value  of temp as well could be string as well
+    // bool intial = true;
+    // num temprature =
+    //  20.5; //accepts other value  of temp as well could be string as well
     //var day = "tuesday"; // accept all data type
     // const pie2 = 3.14;//could not change value
 
     return MaterialApp(
-       home: HomePage(),
-        );
+     // home: HomePage(),
+      themeMode: ThemeMode.light,
+      theme: ThemeData(primaryColor: Colors.deepPurple),
+      darkTheme: ThemeData(primaryColor: Colors.red),
+      initialRoute: "/home",
+      routes: {
+        "/": (context) => LoginPage(),
+        "/home": (context) => HomePage(),
+        "/login": (context) => LoginPage()
+      },
+    );
   }
-  //dart.dev for documentation guidendence
+  //bringVegetables({required bool thaila,int rupes = 100})
+  // {
+
+  //}
+  // //dart.dev for documentation guidendence
+  //wideget return krta hai kuch na kuch
 }
